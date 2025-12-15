@@ -45,7 +45,7 @@ int main() {
     const int events = 10;
     pthread_t prov_thr, cons_thr;
 
-    int count = N;
+    int count = events;
 
     pthread_create(&prov_thr, NULL, provider, &count);
     pthread_create(&cons_thr, NULL, consumer, &count);
@@ -57,4 +57,5 @@ int main() {
     pthread_cond_destroy(&cond);
 
     return 0;
+
 }
