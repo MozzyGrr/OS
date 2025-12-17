@@ -33,7 +33,7 @@ fi
 
 
 if [ "${INPUT_NAME##*.}" != "cpp" ]; then
-    fail "Файл с расширением .cpp: $INPUT_PATH"
+    fail "Файл должен быть с расширением .cpp: $INPUT_PATH"
 fi
 
 
@@ -72,3 +72,4 @@ if [ "$BUILD_OK" = true ]; then
 fi
 
 exit 0
+
