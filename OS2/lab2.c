@@ -119,7 +119,6 @@ int main()
             }
         }
 
-        // Данные от клиента
         if (client_fd != -1 && FD_ISSET(client_fd, &read_set)) {
             ssize_t nbytes = recv(client_fd, buffer, sizeof(buffer), 0);
             if (nbytes > 0) {
@@ -143,3 +142,4 @@ int main()
     close(server_fd);
     return 0;
 }
+
