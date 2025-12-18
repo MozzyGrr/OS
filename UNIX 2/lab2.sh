@@ -11,7 +11,7 @@ SYNC_FILE="$SHARED_DIR/.sync_lock"
 while true; do
     FILE_TO_USE=""
 
-    {   flock -x 33
+    {   flock -x 52
         INDEX=1
         while true; do
             FILENAME=$(printf "%03d" $INDEX)
@@ -35,3 +35,4 @@ while true; do
 
     COUNTER=$((COUNTER+1))
 done
+
