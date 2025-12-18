@@ -2,7 +2,7 @@
 
 SHARED_DIR="/data"
 COUNTER=1
-
+MAX_INDEX=999
 INSTANCE_ID=$(mktemp -u XXX)
 echo "Container instance $INSTANCE_ID started"
 
@@ -13,7 +13,7 @@ while true; do
 
     {   flock -x 52
         INDEX=1
-        while true; do
+        while [ $INDEX -le $MAX_INDEX ]; do
             FILENAME=$(printf "%03d" $INDEX)
             FULL_PATH="$SHARED_DIR/$FILENAME"
             
@@ -35,4 +35,5 @@ while true; do
 
     COUNTER=$((COUNTER+1))
 done
+
 
