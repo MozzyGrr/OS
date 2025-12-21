@@ -9,7 +9,7 @@
 static int lunar_progress_show(struct seq_file* m, void* v)
 {
     /*
-     * Лунный Новый год:
+     * Р›СѓРЅРЅС‹Р№ РЅРѕРІС‹Р№ РіРѕРґ:
      * 2025-01-29 00:00:00 UTC
      * 2026-02-17 00:00:00 UTC
      */
@@ -35,8 +35,8 @@ static int lunar_progress_show(struct seq_file* m, void* v)
     }
 
     seq_printf(m,
-        "Прошло примерно %lld%% времени\n"
-        "между прошлым и нынешним лунным Новым годом.\n",
+        "ГЏГ°Г®ГёГ«Г® ГЇГ°ГЁГ¬ГҐГ°Г­Г® %lld%% ГўГ°ГҐГ¬ГҐГ­ГЁ\n"
+        "Г¬ГҐГ¦Г¤Гі ГЇГ°Г®ГёГ«Г»Г¬ ГЁ Г­Г»Г­ГҐГёГ­ГЁГ¬ Г«ГіГ­Г­Г»Г¬ ГЌГ®ГўГ»Г¬ ГЈГ®Г¤Г®Г¬.\n",
         progress_percent);
 
     return 0;
@@ -74,3 +74,4 @@ module_init(time_module_init);
 module_exit(time_module_exit);
 
 MODULE_LICENSE("GPL");
+
