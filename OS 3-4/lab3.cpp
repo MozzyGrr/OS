@@ -35,8 +35,8 @@ static int lunar_progress_show(struct seq_file* m, void* v)
     }
 
     seq_printf(m,
-        "Ïðîøëî ïðèìåðíî %lld%% âðåìåíè\n"
-        "ìåæäó ïðîøëûì è íûíåøíèì ëóííûì Íîâûì ãîäîì.\n",
+        "Прошло примерно %lld%% времени\n    "
+        "между прошлым и нынешним лунным Новым годом.\n",
         progress_percent);
 
     return 0;
@@ -45,7 +45,7 @@ static int lunar_progress_show(struct seq_file* m, void* v)
 
 static int proc_entry_open(struct inode* inode, struct file* file)
 {
-    return single_open(file, time_interval_show, NULL);
+    return single_open(file, lunar_progress_show, NULL);
 }
 
 static const struct proc_ops proc_entry_ops = {
@@ -74,4 +74,5 @@ module_init(time_module_init);
 module_exit(time_module_exit);
 
 MODULE_LICENSE("GPL");
+
 
